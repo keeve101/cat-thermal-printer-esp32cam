@@ -1,9 +1,18 @@
-# cat_thermal_printer_esp32cam
+# cat-thermal-printer-esp32cam
+## Introduction
+Side project from Term 2, 3.007 Design Thinking and Innovation course.
 
-Side project from Term 2 DTI, utilizing ESP32 cam, MIT App Inventor and 'Cat Thermal Printer'<br> 
-Using libraries - JPEGDEC, Thermal_Printer by Larry Banks; Github bitbank2, esp_camera by Espressif; Github espressif
-
-Tested using ESP32-CAM and 'Cat' series BLE Thermal Printer<br><br>
+## Project Overview
 To directly decode image from image captured to frame buffer to 1-bpp dithered image sent to thermal printer. Included functions such as message printing from BLE App to Thermal Printer and images embedded in FLASH memory.
 
-Camera framesize is tested at QVGA, potentially able to go up to CIF. Unsure if it is possible to configure custom frame sizes, but it is probably possible to resize image from frame buffer (see bilinear interpolation algorithm https://rosettacode.org/wiki/Bilinear_interpolation) to fit larger frame sizes such as VGA to resize to 384x??? to fit the Thermal Printer's resolution (cat thermal printer resolution is 203 dpi (384), very well possible to use other supported BLE Thermal Printers included in Larry Bank's Thermal Printer library that may fit up to 576x???).
+Camera framesize is tested at QVGA, potentially able to go up to CIF. Unsure if it is possible to configure custom frame sizes, but it is probably possible to resize the image from frame buffer (see [bilinear interpolation algorithm](https://rosettacode.org/wiki/Bilinear_interpolation)) to fit larger frame sizes such as VGA to resize to fit the thermal printer's resolution as the cat thermal printer resolution is 203 dpi (384), very well possible to use other supported thermal printers included in the [Thermal_Printer](https://github.com/bitbank2/Thermal_Printer) library that may fit higher resolutions.
+
+## Tools used
+- [ESP32-CAM Module](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)
+- ['Cat' series BLE Thermal Printer](https://hackspace.raspberrypi.com/articles/bluetooth-cat-thermal-printer-review)
+- [MIT App Inventor](https://appinventor.mit.edu/)
+
+## Resources/Libraries used
+- [JPEGDEC](https://github.com/bitbank2/JPEGDEC)
+- [Thermal_Printer](https://github.com/bitbank2/Thermal_Printer)
+- [esp-camera](https://github.com/espressif/esp32-camera)
